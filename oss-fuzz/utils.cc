@@ -19,7 +19,7 @@
 #include <Magick++/SecurityPolicy.h>
 
 #ifndef FUZZ_MAX_SIZE
-#define FUZZ_MAX_SIZE 2048
+#define FUZZ_MAX_SIZE INT_MAX
 #endif
 
 static bool IsInvalidSize(const size_t size,const size_t min = 1)
