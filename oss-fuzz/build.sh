@@ -11,16 +11,8 @@ MAGICK_FAST_BUILD=0
 
 . $MAGICK_SRC/build_dependencies.sh
 . $MAGICK_SRC/build_imagemagick.sh
-. $MAGICK_SRC/build_fuzzers.sh
+. $MAGICK_SRC/build_fuzzer_miff1.sh
+. $MAGICK_SRC/build_fuzzer_mng1.sh
 
 echo '#!/bin/sh' > $OUT/gs
 chmod +x $OUT/gs
-
-mkdir afl_testcases
-(cd afl_testcases; tar xvf "$SRC/afl_testcases.tgz")
-for format in gif jpg png bmp ico webp tif; do
-    mkdir $format
-    find afl_testcases -type f -name '*.'$format -exec mv -n {} $format/ \;
-    zip -rj $format.zip $format/
-    cp $format.zip "$OUT/encoder_${format}_fuzzer_seed_corpus.zip"
-done
