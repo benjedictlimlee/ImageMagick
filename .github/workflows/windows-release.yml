@@ -96,7 +96,7 @@ jobs:
         CloneRepositories.IM7.cmd
 
     - name: Download ChangeLog.md
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: ChangeLog
         path: ImageMagick-Windows\ImageMagick
@@ -219,7 +219,7 @@ jobs:
         CloneRepositories.IM7.cmd
 
     - name: Download ChangeLog.md
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: ChangeLog
         path: ImageMagick-Windows\ImageMagick
@@ -293,7 +293,7 @@ jobs:
         CloneRepositories.IM7.cmd
 
     - name: Download ChangeLog.md
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: ChangeLog
         path: ImageMagick-Windows\ImageMagick
